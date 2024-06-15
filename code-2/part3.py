@@ -16,7 +16,7 @@ import matplotlib.pyplot as plot
 class StationInfo:
     def __init__(self):
         self.stations = {}
-        with open("london_stations.csv", 'r') as csvfile:
+        with open("code-2/csv_files/london_stations.csv", 'r') as csvfile:
             reader = csv.reader(csvfile)
             next(reader)
             for row in reader:
@@ -69,14 +69,14 @@ def distance_between_stations(station1, station2):
 # set up graph --------------------------------------
 
 def add_stations_to_graph(graph):
-    with open('london_stations.csv', newline='', encoding='utf-8') as csvfile:
+    with open('code-2/csv_files/london_stations.csv', newline='', encoding='utf-8') as csvfile:
         reader = csv.reader(csvfile)
         for row in reader:
             if (row[0] != "id"):
                 graph.add_node(int(row[0]))
 
 def add_stations_connections_to_graph(graph):
-    with open('london_connections.csv', newline='', encoding='utf-8') as csvfile:
+    with open('code-2/csv_files/london_connections.csv', newline='', encoding='utf-8') as csvfile:
         reader = csv.reader(csvfile)
         for row in reader:
             if (row[0] != 'station1'):
@@ -92,7 +92,7 @@ def add_stations_connections_to_graph(graph):
 
 # returns station ids
 def get_all_stations():
-    with open('london_stations.csv', newline='', encoding='utf-8') as csvfile:
+    with open('code-2/csv_files/london_stations.csv', newline='', encoding='utf-8') as csvfile:
         reader = csv.reader(csvfile)
         stations = []
         for row in reader:
@@ -103,7 +103,7 @@ def get_all_stations():
 
 # returns station info
 def get_station_info(id):
-    with open('london_stations.csv', newline='', encoding='utf-8') as csvfile:
+    with open('code-2/csv_files/london_stations.csv', newline='', encoding='utf-8') as csvfile:
         reader = csv.reader(csvfile)
         for row in reader:
             if row[0] == str(id):
@@ -121,7 +121,7 @@ def get_station_info(id):
 
 # return station connections
 def get_station_info_connections(id):
-    with open('london_connections.csv', newline='', encoding='utf-8') as csvfile:
+    with open('code-2/csv_files/london_connections.csv', newline='', encoding='utf-8') as csvfile:
         reader = csv.reader(csvfile)
         for row in reader:
             if row[0] == str(id):
@@ -189,10 +189,10 @@ def experiment():
     stationsOrdered = stationsOrdered + get_all_stations_adjacent_line(station_pairs(get_all_stations())) # pairs on adjacent lines
     stationsOrdered = stationsOrdered + get_all_stations_multiple_line(station_pairs(get_all_stations())) # pairs that require multiple transfers
 
-    for s in stationsOrdered:
+    for s in station_pairs(get_all_stations()):
         r = r + 1
         
-        if (r % 1 == 0): # to skip some experiments if needed
+        if (r % 1000 == 0): # to skip some experiments if needed
             start1 = timeit.default_timer()
             a_star.a_star(x, s[0], s[1], distance_between_stations)
             end1 = timeit.default_timer()
