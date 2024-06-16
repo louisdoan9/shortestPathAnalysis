@@ -13,6 +13,14 @@ The code for this project is written in Python and can be found in the provided 
 
 The project also includes CSV files containing information about the London subway system, which are used in some of the experiments.
 
+### Experiments
+
+Experiment 1 compares the approximation version of both Dijkstra's and Bellman Ford to their corresponding original
+versions. Compares the 2 versions as number of nodes, number of edges, number of relaxations change.
+
+Experiment 2 compares runtime of Dijkstra's to A\* with an efficient and inefficient heuristic function. Tests
+are conducted using data on London's subway system.
+
 ### Report
 
 A detailed report of the overall findings is available in the included PDF file.
