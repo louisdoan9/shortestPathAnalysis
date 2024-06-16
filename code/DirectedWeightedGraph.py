@@ -1,8 +1,10 @@
 class DirectedWeightedGraph:
 
-    def __init__(self):
+    def __init__(self, n=0):
         self.adj = {}
         self.weights = {}
+        for i in range(n):
+            self.adj[i] = []
 
     def are_connected(self, node1, node2):
         for neighbour in self.adj[node1]:

@@ -1,7 +1,8 @@
 import csv
 import itertools
 from math import radians, sin, cos, sqrt, atan2
-import shortest_path
+import DirectedWeightedGraph
+import Dijkstra
 import A_star
 import timeit
 import matplotlib.pyplot as plot
@@ -179,7 +180,7 @@ def station_pairs(stations):
 
 def experiment():
     # setup graph
-    x = shortest_path.DirectedWeightedGraph(500)
+    x = DirectedWeightedGraph.DirectedWeightedGraph(500)
     add_stations_to_graph(x)
     add_stations_connections_to_graph(x)
 
@@ -204,7 +205,7 @@ def experiment():
             a_star_times.append(end1 - start1)
 
             start2 = timeit.default_timer()
-            shortest_path.dijkstra(x, s[0])[s[1]]
+            Dijkstra.dijkstra(x, s[0])[s[1]]
             end2 = timeit.default_timer()
             dijkstra_times.append(end2 - start2)
 
