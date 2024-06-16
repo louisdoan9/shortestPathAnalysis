@@ -6,6 +6,12 @@ import A_star
 import timeit
 import matplotlib.pyplot as plot
 
+"""
+Experiment 2
+
+Compare runtime of shortest path algorithms Dijkstra to A* with an efficient and inefficient heuristic function.
+Use data on London's subway systems to test.
+"""
 
 
 # heuristic function and setup -----------------------------
