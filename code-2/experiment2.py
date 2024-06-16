@@ -1,9 +1,8 @@
 import csv
 import itertools
 from math import radians, sin, cos, sqrt, atan2
-import random
 import shortest_path
-import a_star
+import A_star
 import timeit
 import matplotlib.pyplot as plot
 
@@ -194,7 +193,7 @@ def experiment():
         
         if (r % 1000 == 0): # to skip some experiments if needed
             start1 = timeit.default_timer()
-            a_star.a_star(x, s[0], s[1], distance_between_stations)
+            A_star.a_star(x, s[0], s[1], distance_between_stations)
             end1 = timeit.default_timer()
             a_star_times.append(end1 - start1)
 
