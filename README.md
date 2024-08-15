@@ -1,4 +1,4 @@
-# shortestPathAnalysis
+# Shortest Path Analysis 🗺️
 
 ### Overview
 
@@ -24,3 +24,8 @@ are conducted using data on London's subway system.
 ### Report
 
 A detailed report of the overall findings is available in the included PDF file.
+
+## Screenshots 📸
+
+![App Screenshot 1](./README_images/shortestpath.png)
+![App Screenshot 2](./README_images/shortestpath2.png)
